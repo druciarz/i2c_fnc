@@ -97,7 +97,8 @@ char I2C_Read_Ack()
 	return TWDR;											
 }	
 
-char I2C_Read_Nack()										
+char I2C_Read_Nack()			
+{
 	TWCR=(1<<TWEN)|(1<<TWINT);								
 	while (!(TWCR & (1<<TWINT)));							
 	return TWDR;											
